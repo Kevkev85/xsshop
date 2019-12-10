@@ -2,10 +2,12 @@ package com.example.jwtsecurity.Mappers;
 
 import com.example.jwtsecurity.Model.Category;
 import com.example.jwtsecurity.Model.Item;
+import com.example.jwtsecurity.Model.OrderItem;
 import com.example.jwtsecurity.Model.Product;
 import com.example.jwtsecurity.Repository.CategoryRepository;
 import com.example.jwtsecurity.Repository.ProductRepository;
 import com.example.jwtsecurity.Views.ItemView;
+import com.example.jwtsecurity.Views.OrderItemView;
 import com.example.jwtsecurity.Views.ProductToItemView;
 import com.example.jwtsecurity.Views.ProductView;
 import org.springframework.stereotype.Component;
@@ -49,6 +51,12 @@ public class ProductMapper {
         entity.setQuantity(1);
         return entity;
     }
+
+    public OrderItem convertToOrderItemEntity(OrderItemView view){
+        var entity = new OrderItem(view.getTitle(), view.getPrice(), view.getQuantity());
+        return entity;
+    }
+
     public Product convertUpdatedEntity( Long id, ProductView view) {
         Product updatedProduct = this.productRepository.findById(id).orElse(null);
         if(updatedProduct == null) throw new EntityNotFoundException();

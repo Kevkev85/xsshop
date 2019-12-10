@@ -7,6 +7,8 @@ public class ShoppingCartView {
 
     private Date createdOn;
 
+
+
     public Long getId() {
         return id;
     }

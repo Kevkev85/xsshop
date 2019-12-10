@@ -8,6 +8,7 @@ import com.example.jwtsecurity.Repository.CategoryRepository;
 import com.example.jwtsecurity.Repository.ItemRepository;
 import com.example.jwtsecurity.Repository.ShoppingCartRepository;
 import com.example.jwtsecurity.Views.ProductToItemView;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -125,4 +126,18 @@ public class ShoppingCartApi {
         this.cartRepository.deleteById(id);
     }
 
+    @PatchMapping ("/clear/{id}")
+    public ResponseEntity<?> clearItems(@PathVariable Long id){
+        var cart = this.cartRepository.findById(id).orElse(null);
+
+        if (cart != null ){
+            cart.clearItems();
+            this.cartRepository.save(cart);
+            return ResponseEntity.ok().body(cart);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+
+    }
 }

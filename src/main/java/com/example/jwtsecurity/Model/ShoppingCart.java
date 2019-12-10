@@ -13,7 +13,7 @@ public class ShoppingCart {
 
     private Date createdOn;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "shoppingCart", cascade =  CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "shoppingCart", cascade =  CascadeType.ALL, orphanRemoval = true)
     private List<Item> items = new ArrayList<>();
 
 
@@ -64,5 +64,8 @@ public class ShoppingCart {
         items.remove(item);
         item.setShoppingCart(null);
 
+    }
+    public  void clearItems() {
+        this.items.clear();
     }
 }
