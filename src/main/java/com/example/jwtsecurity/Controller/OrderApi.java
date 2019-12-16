@@ -5,6 +5,7 @@ import com.example.jwtsecurity.Model.Order;
 import com.example.jwtsecurity.Repository.OrderRepository;
 import com.example.jwtsecurity.Views.OrderView;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,7 @@ public class OrderApi {
         this.mapper = mapper;
     }
 
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @PostMapping()
     public Order createOrder(@RequestBody OrderView view, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
@@ -47,6 +49,7 @@ public class OrderApi {
 
     }
 
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
         var order = this.orderRepository.findById(id).orElse(null);
@@ -57,16 +60,19 @@ public class OrderApi {
         return ResponseEntity.ok(order);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     public List<Order> allOrders(){
         return this.orderRepository.findAll();
     }
 
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @GetMapping("byName/{name}")
     public List<Order> ordersByName(@PathVariable String name){
         return this.orderRepository.findByName(name);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteOrder(@PathVariable Long id) {
         this.orderRepository.deleteById(id);

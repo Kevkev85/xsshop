@@ -49,6 +49,14 @@ public class ShoppingCartApi {
         return this.cartRepository.findAll();
     }
 
+    @GetMapping()
+    public ShoppingCart createCartNoId(){
+        var cartToCreate = new ShoppingCart();
+        cartToCreate.setCreatedOn();
+        this.cartRepository.save(cartToCreate);
+        return cartToCreate;
+    }
+
     @PostMapping()
     public ShoppingCart createCart(@RequestBody ProductToItemView product) {
         Category category = this.categoryRepository.findByName(product.getCategory().getName());

@@ -3,18 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f26b4949-f1f2-4de6-bc89-2623c7c4afd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Repository/ShoppingCartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Repository/ShoppingCartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/ShoppingCartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/ShoppingCartView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/AuthRestAPIs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/AuthRestAPIs.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ShoppingCartApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ShoppingCartApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/ProductMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Model/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Model/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Repository/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Repository/CategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Views/ShoppingCartView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Views/ShoppingCartView.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +108,10 @@
       <workItem from="1575611913666" duration="599000" />
       <workItem from="1575668464025" duration="2530000" />
       <workItem from="1575714633730" duration="11548000" />
-      <workItem from="1575848352406" duration="5024000" />
+      <workItem from="1575848352406" duration="5138000" />
+      <workItem from="1576022610950" duration="1214000" />
+      <workItem from="1576109119067" duration="6053000" />
+      <workItem from="1576483095433" duration="3973000" />
     </task>
     <servers />
   </component>
@@ -140,17 +136,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java</url>
-          <line>133</line>
+          <line>141</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java</url>
-          <line>134</line>
+          <line>142</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java</url>
-          <line>135</line>
+          <line>143</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

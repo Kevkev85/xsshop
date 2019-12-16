@@ -38,6 +38,7 @@ public class AuthRestAPIs {
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginView loginRequest){
+
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getUsername(),
@@ -65,7 +66,10 @@ public class AuthRestAPIs {
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
 
-        if(signUpRequest.getRole().equals("sonko")) {
+        var roleToAssign = signUpRequest.getRole();
+
+
+        if(!roleToAssign.isBlank() && roleToAssign.equals("sonko")) {
             user.setRoles("ADMIN");
         }
         else {

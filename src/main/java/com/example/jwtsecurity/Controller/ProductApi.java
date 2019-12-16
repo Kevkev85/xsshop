@@ -5,6 +5,7 @@ import com.example.jwtsecurity.Model.Product;
 import com.example.jwtsecurity.Repository.CategoryRepository;
 import com.example.jwtsecurity.Repository.ProductRepository;
 import com.example.jwtsecurity.Views.ProductView;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,7 @@ public class ProductApi {
         return products;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/byId/{id}")
     public ProductView byId(@PathVariable Long id){
         var product = this.productRepository.findById(id).orElse(null);
@@ -46,6 +48,7 @@ public class ProductApi {
         return productView;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public Product save(@RequestBody ProductView productView, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
@@ -57,6 +60,7 @@ public class ProductApi {
         return productEntity;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public Product update(@RequestBody ProductView productView, @PathVariable Long id, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
@@ -68,6 +72,7 @@ public class ProductApi {
         return productEntity;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
         this.productRepository.deleteById(id);
