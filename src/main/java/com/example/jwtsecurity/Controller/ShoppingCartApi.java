@@ -61,7 +61,6 @@ public class ShoppingCartApi {
     public ShoppingCart createCart(@RequestBody ProductToItemView product) {
         Category category = this.categoryRepository.findByName(product.getCategory().getName());
         var itemToSave = new Item();
-        //itemToSave.setId(product.getId());
         itemToSave.setTitle(product.getTitle());
         itemToSave.setPrice(product.getPrice());
         itemToSave.setCategory(category);

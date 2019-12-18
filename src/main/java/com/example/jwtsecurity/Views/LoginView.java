@@ -1,7 +1,12 @@
 package com.example.jwtsecurity.Views;
 
+import javax.validation.constraints.NotBlank;
+
 public class LoginView {
+    @NotBlank
     private String username;
+
+    @NotBlank
     private String password;
 
     public String getUsername() {

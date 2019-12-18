@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f26b4949-f1f2-4de6-bc89-2623c7c4afd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/OrderApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/OrderApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ProductApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ProductApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/CategoryApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/CategoryApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/TestApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/OrderView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/OrderView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/SignupView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Views/SignupView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/CategoryApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/CategoryApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Views/OrderView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Views/OrderView.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +123,8 @@
       <workItem from="1576483095433" duration="5421000" />
       <workItem from="1576565773500" duration="2150000" />
       <workItem from="1576582797331" duration="167000" />
-      <workItem from="1576650222091" duration="1221000" />
+      <workItem from="1576650222091" duration="4976000" />
+      <workItem from="1576696018461" duration="3253000" />
     </task>
     <servers />
   </component>
@@ -133,39 +143,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java</url>
-          <line>36</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

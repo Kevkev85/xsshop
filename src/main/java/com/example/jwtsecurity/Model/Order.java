@@ -29,13 +29,6 @@ public class Order {
 
     public Order(){ }
 
-//    public Order(Date datePlaced, String addressLine1, String addressLine2, String city, double totalPrice) {
-//        this.datePlaced = datePlaced;
-//        this.addressLine1 = addressLine1;
-//        this.addressLine2 = addressLine2;
-//        this.city = city;
-//        this.totalPrice = totalPrice;
-//    }
 
 
     public Order(String name, String addressLine1, String addressLine2, String city, List<OrderItem> orderItems, double totalPrice) {

@@ -26,12 +26,11 @@ public class CategoryApi {
 
     @GetMapping("/all")
     public List<Category>all(){
-        // var allCategories = this.categoryRepository.findAll()
         var allCategories = this.categoryRepository.findAllByOrderByName();
         return allCategories;
     }
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping
+    @PostMapping("/mpya")
     public Category save(@RequestBody CategoryView categoryView, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             throw new ValidationException();

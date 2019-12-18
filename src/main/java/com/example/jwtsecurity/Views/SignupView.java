@@ -18,7 +18,6 @@ public class SignupView {
     @Size(min = 5, max = 60)
     private String password;
 
-    //private Set<String> role;
 
     private String role;
 
@@ -54,11 +53,4 @@ public class SignupView {
         this.role = role;
     }
 
-    //    public Set<String> getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(Set<String> role) {
-//        this.role = role;
-//    }
 }

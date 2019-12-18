@@ -28,7 +28,6 @@ public class User {
 
     private String password;
 
-   // private Set<String> roles = new HashSet<>();
     private String roles = "";
 
     public User(){}
@@ -81,15 +80,6 @@ public class User {
         this.roles = roles;
     }
 
-    //    public Set<String> getRoles() {
-//        return roles;
-//    }
-//
-//    public void setRoles(Set<String> roles) {
-//        this.roles = roles;
-//    }
-
-    //
     public List<String> getRoleList(){
         if(this.roles.length() > 0) {
             return Arrays.asList(this.roles.split(","));

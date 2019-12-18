@@ -1,5 +1,7 @@
 package com.example.jwtsecurity.Views;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -8,16 +10,22 @@ public class OrderView {
 
     private Date datePlaced;
 
+    @NotBlank
     private  String name;
 
+    @NotBlank
     private String addressLine1;
 
+    @NotBlank
     private String addressLine2;
 
+    @NotBlank
     private String city;
 
+    @NotNull
     private List<OrderItemView> orderItems;
 
+    @NotBlank
     private Long totalPrice;
 
     public Long getId() {
@@ -68,13 +76,6 @@ public class OrderView {
         this.city = city;
     }
 
-//    public List<OrderItemView> getOrderItemViewList() {
-//        return orderItemViewList;
-//    }
-//
-//    public void setOrderItemViewList(List<OrderItemView> orderItemViewList) {
-//        this.orderItemViewList = orderItemViewList;
-//    }
 
     public List<OrderItemView> getOrderItems() {
         return orderItems;
