@@ -33,7 +33,7 @@ public class OrderApi {
             throw new ValidationException();
         }
 
-            var orderedItemList = view.getOrderItemViewList().stream()
+            var orderedItemList = view.getOrderItems().stream()
                     .map(c -> this.mapper.convertToOrderItemEntity(c))
                     .collect(Collectors.toList());
 

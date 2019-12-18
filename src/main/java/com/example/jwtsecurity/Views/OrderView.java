@@ -16,7 +16,7 @@ public class OrderView {
 
     private String city;
 
-    private List<OrderItemView> orderItemViewList;
+    private List<OrderItemView> orderItems;
 
     private Long totalPrice;
 
@@ -68,12 +68,20 @@ public class OrderView {
         this.city = city;
     }
 
-    public List<OrderItemView> getOrderItemViewList() {
-        return orderItemViewList;
+//    public List<OrderItemView> getOrderItemViewList() {
+//        return orderItemViewList;
+//    }
+//
+//    public void setOrderItemViewList(List<OrderItemView> orderItemViewList) {
+//        this.orderItemViewList = orderItemViewList;
+//    }
+
+    public List<OrderItemView> getOrderItems() {
+        return orderItems;
     }
 
-    public void setOrderItemViewList(List<OrderItemView> orderItemViewList) {
-        this.orderItemViewList = orderItemViewList;
+    public void setOrderItems(List<OrderItemView> orderItems) {
+        this.orderItems = orderItems;
     }
 
     public Long getTotalPrice() {
