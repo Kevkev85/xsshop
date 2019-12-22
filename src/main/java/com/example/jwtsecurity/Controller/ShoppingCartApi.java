@@ -130,7 +130,11 @@ public class ShoppingCartApi {
 
     @DeleteMapping("/{id}")
     public void deleteCart(@PathVariable Long id) {
-        this.cartRepository.deleteById(id);
+        var cart = this.cartRepository.findById(id);
+        if(cart.isPresent()){
+            this.cartRepository.deleteById(id);
+        }
+
     }
 
     @PatchMapping ("/clear/{id}")
