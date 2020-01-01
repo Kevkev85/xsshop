@@ -5,14 +5,12 @@ import com.example.jwtsecurity.Model.Category;
 import com.example.jwtsecurity.Model.Item;
 import com.example.jwtsecurity.Model.ShoppingCart;
 import com.example.jwtsecurity.Repository.CategoryRepository;
-import com.example.jwtsecurity.Repository.ItemRepository;
 import com.example.jwtsecurity.Repository.ShoppingCartRepository;
 import com.example.jwtsecurity.Views.ProductToItemView;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityNotFoundException;
 import javax.validation.ValidationException;
 import java.util.List;
 import java.util.Optional;
@@ -23,42 +21,36 @@ import java.util.Optional;
 public class ShoppingCartApi {
     private ShoppingCartRepository cartRepository;
     private CategoryRepository categoryRepository;
-    private ItemRepository itemRepository;
     private ProductMapper productMapper;
 
-    public ShoppingCartApi(ShoppingCartRepository cartRepository, CategoryRepository categoryRepository, ItemRepository itemRepository, ProductMapper productMapper) {
+    public ShoppingCartApi(ShoppingCartRepository cartRepository, CategoryRepository categoryRepository, ProductMapper productMapper) {
         this.cartRepository = cartRepository;
         this.categoryRepository = categoryRepository;
-        this.itemRepository = itemRepository;
         this.productMapper = productMapper;
     }
 
     @GetMapping("/{id}")
-    public ShoppingCart  getCart(@PathVariable Long id) {
-       var cart  =  this.cartRepository.findById(id).orElse(null);
-       if (cart == null) {
-           throw new EntityNotFoundException();
-       }
-
-       return cart;
+    public ResponseEntity<ShoppingCart>  getCart(@PathVariable Long id) {
+       var cart  =  this.cartRepository.findById(id);
+       return cart.isPresent() ? ResponseEntity.ok(cart.get()) : ResponseEntity.notFound().build();
 
     }
 
     @GetMapping("/all")
-    public List<ShoppingCart> all() {
-        return this.cartRepository.findAll();
+    public ResponseEntity<List<ShoppingCart>> all() {
+        return ResponseEntity.ok(this.cartRepository.findAll());
     }
 
     @GetMapping()
-    public ShoppingCart createCartNoId(){
+    public ResponseEntity<ShoppingCart >createCartNoId(){
         var cartToCreate = new ShoppingCart();
         cartToCreate.setCreatedOn();
         this.cartRepository.save(cartToCreate);
-        return cartToCreate;
+        return ResponseEntity.ok(cartToCreate);
     }
 
     @PostMapping()
-    public ShoppingCart createCart(@RequestBody ProductToItemView product) {
+    public ResponseEntity<ShoppingCart> createCart(@RequestBody ProductToItemView product) {
         Category category = this.categoryRepository.findByName(product.getCategory().getName());
         var itemToSave = new Item();
         itemToSave.setTitle(product.getTitle());
@@ -72,83 +64,83 @@ public class ShoppingCartApi {
         cartToCreate.addItem(itemToSave);
 
         this.cartRepository.save(cartToCreate);
-        return cartToCreate;
+        return ResponseEntity.ok(cartToCreate);
 
     }
 
     @PostMapping("/{id}")
-    public ShoppingCart addtoCart(@PathVariable Long id, @RequestBody ProductToItemView product, BindingResult bindingResult) {
+    public ResponseEntity<ShoppingCart> addtoCart(@PathVariable Long id, @RequestBody ProductToItemView product, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             throw new ValidationException();
         }
 
-        var cart = this.cartRepository.findById(id).orElse(null);
-        if (cart != null) {
+        Optional<ShoppingCart> cart = this.cartRepository.findById(id);
 
-            var listOfItems = cart.getItems();
-            Optional<Item> alreadyInList = listOfItems.stream()
+        cart.ifPresent(c -> {
+            c.getItems().stream()
                     .filter(p -> product.getTitle().equals(p.getTitle()))
-                    .findAny();
-            if (alreadyInList.isPresent()) {
-                alreadyInList.get().addQuantity();
-            } else {
+                    .findFirst().ifPresentOrElse(Item::addQuantity,
+             () -> {
                 var productToAdd = this.productMapper.convertToItemEntityYaPili(product);
-                cart.addItem(productToAdd);
-            }
-            this.cartRepository.save(cart);
-            return cart;
+                c.addItem(productToAdd);
+            });
+            this.cartRepository.save(c);
+
+        });
 
 
-        } else {
-            return this.createCart(product);
-        }
+
+        return cart.isPresent() ? ResponseEntity.ok(cart.get()) : this.createCart(product);
+
 
     }
 
     @PostMapping("/reduce/{id}")
-    public ShoppingCart reduceQuantity(@PathVariable Long id, @RequestBody ProductToItemView product, BindingResult bindingResult){
+    public ResponseEntity<ShoppingCart > reduceQuantity(@PathVariable Long id, @RequestBody ProductToItemView product, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             throw new ValidationException();
         }
 
-        var cart = this.cartRepository.findById(id).orElse(null);
-        var listOfitems= cart.getItems();
+        Optional<ShoppingCart> cartOptional = this.cartRepository.findById(id);
+        cartOptional.ifPresent(cart -> {
 
-        var productToReduce = listOfitems.stream()
-                .filter(p -> product.getTitle().equals(p.getTitle()))
-                .findAny().get();
-       var amount = productToReduce.getQuantity();
-       if (amount > 1) {
-           productToReduce.reduceQuantity();
-       } else {
-           cart.removeItem(productToReduce);
-       }
-       this.cartRepository.save(cart);
-       return  cart;
+            cart.getItems().stream()
+                    .filter(p -> product.getTitle().equals(p.getTitle()))
+                    .findFirst().ifPresent(p -> {
+                        var amount = p.getQuantity();
+                        if (amount > 1) {
+                            p.reduceQuantity();
+                        } else {
+                            cart.removeItem(p);
+                        }
+                    });
+
+            this.cartRepository.save(cart);
+
+        });
+
+        return ResponseEntity.of(cartOptional);
+
 
     }
 
     @DeleteMapping("/{id}")
     public void deleteCart(@PathVariable Long id) {
         var cart = this.cartRepository.findById(id);
-        if(cart.isPresent()){
-            this.cartRepository.deleteById(id);
-        }
+        cart.ifPresent(c -> this.cartRepository.deleteById(id));
 
     }
 
     @PatchMapping ("/clear/{id}")
     public ResponseEntity<?> clearItems(@PathVariable Long id){
-        var cart = this.cartRepository.findById(id).orElse(null);
+        var cart = this.cartRepository.findById(id);
 
-        if (cart != null ){
-            cart.clearItems();
-            this.cartRepository.save(cart);
-            return ResponseEntity.ok().body(cart);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        cart.ifPresent(c -> {
+            c.clearItems();
+            this.cartRepository.save(c);
+        });
 
+        return ResponseEntity.of(cart);
 
     }
 }

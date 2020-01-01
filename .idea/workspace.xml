@@ -3,7 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="f26b4949-f1f2-4de6-bc89-2623c7c4afd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/CategoryApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/CategoryApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ProductApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ProductApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/CategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Message/JwtResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Message/OtherJwtResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Security/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Security/UserPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/AuthRestAPIs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/AuthRestAPIs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/CategoryApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/CategoryApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/OrderApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/OrderApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ProductApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ProductApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ShoppingCartApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ShoppingCartApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/CategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/CategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/ProductMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Message/JwtResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Message/OtherJwtResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Security/UserPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Security/UserPrincipal.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +77,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -117,7 +137,11 @@
       <workItem from="1576696018461" duration="5483000" />
       <workItem from="1576713056225" duration="1724000" />
       <workItem from="1576828551453" duration="60000" />
-      <workItem from="1576993665490" duration="6918000" />
+      <workItem from="1576993665490" duration="12176000" />
+      <workItem from="1577068184096" duration="20159000" />
+      <workItem from="1577317866143" duration="8201000" />
+      <workItem from="1577612988018" duration="616000" />
+      <workItem from="1577688788798" duration="644000" />
     </task>
     <servers />
   </component>

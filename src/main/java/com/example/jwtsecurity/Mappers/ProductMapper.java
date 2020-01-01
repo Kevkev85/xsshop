@@ -6,7 +6,6 @@ import com.example.jwtsecurity.Model.OrderItem;
 import com.example.jwtsecurity.Model.Product;
 import com.example.jwtsecurity.Repository.CategoryRepository;
 import com.example.jwtsecurity.Repository.ProductRepository;
-import com.example.jwtsecurity.Views.ItemView;
 import com.example.jwtsecurity.Views.OrderItemView;
 import com.example.jwtsecurity.Views.ProductToItemView;
 import com.example.jwtsecurity.Views.ProductView;
@@ -27,22 +26,10 @@ public class ProductMapper {
     public Product convertToEntity(ProductView view){
         var category = this.categoryRepository.findByName(view.getCategory());
 
-        var entity = new Product(view.getTitle(), view.getPrice(), category, view.getImageUrl());
-        return entity;
+        return new Product(view.getTitle(), view.getPrice(), category, view.getImageUrl());
+
     }
 
-    public Item convertToProperItemEntity(ItemView view) {
-        var category = this.categoryRepository.findByName(view.getCategoryView().getName());
-        var entity = new Item(view.getTitle(), view.getPrice(), category, view.getImageUrl());
-        return entity;
-    }
-
-    public Item convertToItemEntity(ProductView view){
-        var category = this.categoryRepository.findByName(view.getCategory());
-
-        var entity = new Item(view.getTitle(), view.getPrice(), category, view.getImageUrl());
-        return entity;
-    }
 
     public Item convertToItemEntityYaPili(ProductToItemView view){
         var category = this.categoryRepository.findByName(view.getCategory().getName());
@@ -53,12 +40,12 @@ public class ProductMapper {
     }
 
     public OrderItem convertToOrderItemEntity(OrderItemView view){
-        var entity = new OrderItem(view.getTitle(), view.getPrice(), view.getQuantity());
-        return entity;
+        return new OrderItem(view.getTitle(), view.getPrice(), view.getQuantity());
+
     }
 
     public Product convertUpdatedEntity( Long id, ProductView view) {
-        Product updatedProduct = this.productRepository.findById(id).orElse(null);
+        Product updatedProduct = this.productRepository.findById(id).orElseThrow();
         if(updatedProduct == null) throw new EntityNotFoundException();
 
         Category category = this.categoryRepository.findByName(view.getCategory());

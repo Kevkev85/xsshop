@@ -1,7 +1,7 @@
 package com.example.jwtsecurity.Controller;
 
-import com.example.jwtsecurity.Message.OtherJwtResponse;
 import com.example.jwtsecurity.Message.ResponseMessage;
+import com.example.jwtsecurity.Message.TokenMessage;
 import com.example.jwtsecurity.Model.User;
 import com.example.jwtsecurity.Repository.UserRepository;
 import com.example.jwtsecurity.Security.JwtProvider;
@@ -47,7 +47,7 @@ public class AuthRestAPIs {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtProvider.generateJwtToken(authentication);
 
-        return ResponseEntity.ok(new OtherJwtResponse(jwt));
+        return ResponseEntity.ok(new TokenMessage(jwt));
     }
 
     @PostMapping("/signup")

@@ -1,9 +1,9 @@
 package com.example.jwtsecurity.Message;
 
-public class OtherJwtResponse {
+public class TokenMessage {
     private String token;
 
-    public OtherJwtResponse(String token) {
+    public TokenMessage(String token) {
         this.token = token;
     }
 

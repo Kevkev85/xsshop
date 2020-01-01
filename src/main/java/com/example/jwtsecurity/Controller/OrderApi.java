@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ValidationException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -28,53 +29,52 @@ public class OrderApi {
 
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @PostMapping()
-    public Order createOrder(@RequestBody OrderView view, BindingResult bindingResult){
+    public ResponseEntity<Order> createOrder(@RequestBody OrderView view, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             throw new ValidationException();
         }
 
-            var orderedItemList = view.getOrderItems().stream()
+        var orderToCreate = new Order(view.getName(), view.getAddressLine1(),
+                view.getAddressLine2(), view.getCity(), view.getTotalPrice());
+
+        orderToCreate.setDatePlaced();
+
+        var orderedItemList = view.getOrderItems().stream()
                     .map(c -> this.mapper.convertToOrderItemEntity(c))
                     .collect(Collectors.toList());
 
+        orderedItemList.forEach(orderToCreate::addOrderItem);
 
-            var orderToCreate = new Order(view.getName(), view.getAddressLine1(),
-                    view.getAddressLine2(), view.getCity(), view.getTotalPrice());
-            orderedItemList.forEach(e -> orderToCreate.addOrderItem(e));
-            orderToCreate.setDatePlaced();
+        this.orderRepository.save(orderToCreate);
 
-            this.orderRepository.save(orderToCreate);
-
-            return orderToCreate;
+        return ResponseEntity.ok(orderToCreate);
 
     }
 
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
-        var order = this.orderRepository.findById(id).orElse(null);
-        if (order == null) {
-            return ResponseEntity.notFound().build();
-        }
+        Optional<Order> order = this.orderRepository.findById(id);
 
-        return ResponseEntity.ok(order);
+        return ResponseEntity.of(order);
+
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
-    public List<Order> allOrders(){
-        return this.orderRepository.findAll();
+    public ResponseEntity<List<Order>> allOrders(){
+        return ResponseEntity.ok(this.orderRepository.findAll());
     }
 
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @GetMapping("byName/{name}")
-    public List<Order> ordersByName(@PathVariable String name){
-        return this.orderRepository.findByName(name);
+    public ResponseEntity<List<Order>> ordersByName(@PathVariable String name){
+        return ResponseEntity.ok(this.orderRepository.findByName(name));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteOrder(@PathVariable Long id) {
-        this.orderRepository.deleteById(id);
+         this.orderRepository.deleteById(id);
     }
 }

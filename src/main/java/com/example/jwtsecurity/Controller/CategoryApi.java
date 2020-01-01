@@ -4,6 +4,7 @@ import com.example.jwtsecurity.Mappers.CategoryMapper;
 import com.example.jwtsecurity.Model.Category;
 import com.example.jwtsecurity.Repository.CategoryRepository;
 import com.example.jwtsecurity.Views.CategoryView;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -25,13 +26,13 @@ public class CategoryApi {
 
 
     @GetMapping("/all")
-    public List<Category>all(){
-        var allCategories = this.categoryRepository.findAllByOrderByName();
-        return allCategories;
+    public ResponseEntity<List<Category>> all(){
+        return ResponseEntity.ok(this.categoryRepository.findAllByOrderByName());
+
     }
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/mpya")
-    public Category save(@RequestBody CategoryView categoryView, BindingResult bindingResult){
+    public ResponseEntity<Category> save(@RequestBody CategoryView categoryView, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             throw new ValidationException();
         }
@@ -39,7 +40,7 @@ public class CategoryApi {
         var categoryEntity = this.mapper.convertToCategoryEntity(categoryView);
         this.categoryRepository.save(categoryEntity);
 
-        return categoryEntity;
+        return ResponseEntity.ok(categoryEntity);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
