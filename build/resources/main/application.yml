@@ -1,0 +1,50 @@
+management:
+  context-path: /actuator
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+server:
+  port: ${PORT:8080}
+
+
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:${db-url:jdbc:postgresql://localhost:5432/hello-spring}}
+    username: ${POSTGRES_USER:${DATASOURCE_USERNAME:${db-user:}}}
+    password: ${POSTGRES_PASSWORD:${DATASOURCE_PASSWORD:${db-pass:}}}
+  jpa:
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        # Make hibernate correctly handle java.sql.SQLFeatureNotSupportedException when attempting to detect
+        # The available functions for the selected dialect
+        #
+        # @see https://github.com/spring-projects/spring-boot/issues/12007
+        # @see https://hibernate.atlassian.net/browse/HHH-12368
+        #
+        # Fixed in hibernate 5.4.0.CR1 So not needed if you are using a more recent version
+        # Check with:
+        # $: ./gradlew dependencies | grep hibernate
+        jdbc.lob.non_contextual_creation: true
+        # Format the generated SQL statements to make it more readable
+        format_sql: true
+        show_sql: ${show-sql:false}
+        # Prevent LazyInitializationException being thrown from hibernate when fetching associations outside a
+        # session. With this value active, hibernate will create temporary sessions when an lazy loaded entity
+        # wasn't fetched in the initial query. This will work, but it's far better to use a DTO projection or
+        # a JOIN FETCH query to retrieve the data
+        enable_lazy_load_no_trans: true
+    # Hibernate ddl auto (create, create-drop, validate, update, none)
+    #   validate: validate the schema, makes no changes to the database, will throw exception if table not found
+    #   update: update the schema, creates the schema if none exists
+    #   create: creates the schema, destroying previous data
+    #   create-drop: drop the schema when the SessionFactory is closed explicitly, usually when app is stopped
+    #   none: do nothing
+    hibernate.ddl-auto: ${ddl-auto:none}
+    generate-ddl: false
+

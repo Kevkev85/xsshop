@@ -18,7 +18,6 @@ services:
       - ./docker_entrypoint.sh:/docker_entrypoint.sh
       - ./src/main/resources/application-local.yml:/app/config/application-local.yml:ro
       - ./src/main/resources/application.yml:/app/config/application.yml:ro
-      - ./src/main/resources/db:/db
       - ./build/libs/jwtsecurity-0.0.1-SNAPSHOT.jar:/app/app.jar
     depends_on:
       - postgres
