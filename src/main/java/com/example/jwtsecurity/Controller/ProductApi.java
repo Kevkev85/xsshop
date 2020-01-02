@@ -27,7 +27,7 @@ public class ProductApi {
 
     @GetMapping("/all")
     public ResponseEntity<List<Product>> all (){
-        var products = this.productRepository.findAllByOrderByTitle();
+        List<Product> products = this.productRepository.findAllByOrderByTitle();
 
         return ResponseEntity.ok(products);
     }
@@ -35,9 +35,9 @@ public class ProductApi {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/byId/{id}")
     public ResponseEntity<ProductView> byId(@PathVariable Long id){
-        var product = this.productRepository.findById(id).orElseThrow();
+        Product product = this.productRepository.findById(id).orElseThrow();
 
-        var productView = this.mapper.convertToProductView(product);
+        ProductView productView = this.mapper.convertToProductView(product);
 
         return ResponseEntity.ok(productView);
     }
@@ -49,7 +49,7 @@ public class ProductApi {
             throw new ValidationException();
         }
 
-        var productEntity = this.mapper.convertToEntity(productView);
+        Product productEntity = this.mapper.convertToEntity(productView);
         this.productRepository.save(productEntity);
         return productEntity;
     }
@@ -62,7 +62,7 @@ public class ProductApi {
             throw new ValidationException();
         }
 
-        var productEntity = this.mapper.convertUpdatedEntity(id,productView);
+        Product productEntity = this.mapper.convertUpdatedEntity(id,productView);
         this.productRepository.save(productEntity);
         return ResponseEntity.ok(productEntity);
     }

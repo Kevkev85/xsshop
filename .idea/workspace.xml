@@ -2,28 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f26b4949-f1f2-4de6-bc89-2623c7c4afd5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/AuthRestAPIs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/CategoryApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/CategoryApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/OrderApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ProductApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ProductApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Controller/ShoppingCartApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/CategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/NewProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/NewProductMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Mappers/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Message/JwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Message/OtherJwtResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Security/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jwtsecurity/Security/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/AuthRestAPIs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/AuthRestAPIs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/CategoryApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/CategoryApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/OrderApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/OrderApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ProductApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ProductApi.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ShoppingCartApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Controller/ShoppingCartApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/CategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/CategoryMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/ProductMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Message/JwtResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Message/OtherJwtResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Security/UserPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Security/UserPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/NewProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/jwtsecurity/Mappers/NewProductMapper.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +38,23 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="jwtsecurity" />
@@ -74,6 +82,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -142,6 +151,8 @@
       <workItem from="1577317866143" duration="8201000" />
       <workItem from="1577612988018" duration="616000" />
       <workItem from="1577688788798" duration="644000" />
+      <workItem from="1577906487206" duration="2803000" />
+      <workItem from="1577937609565" duration="6303000" />
     </task>
     <servers />
   </component>

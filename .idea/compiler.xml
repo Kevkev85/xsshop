@@ -11,6 +11,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jwtsecurity" target="11" />
+      <module name="jwtsecurity.main" target="1.8" />
+      <module name="jwtsecurity.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

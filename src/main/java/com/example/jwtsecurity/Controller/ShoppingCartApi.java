@@ -31,7 +31,7 @@ public class ShoppingCartApi {
 
     @GetMapping("/{id}")
     public ResponseEntity<ShoppingCart>  getCart(@PathVariable Long id) {
-       var cart  =  this.cartRepository.findById(id);
+       Optional<ShoppingCart> cart =  this.cartRepository.findById(id);
        return cart.isPresent() ? ResponseEntity.ok(cart.get()) : ResponseEntity.notFound().build();
 
     }
@@ -43,7 +43,7 @@ public class ShoppingCartApi {
 
     @GetMapping()
     public ResponseEntity<ShoppingCart >createCartNoId(){
-        var cartToCreate = new ShoppingCart();
+        ShoppingCart cartToCreate = new ShoppingCart();
         cartToCreate.setCreatedOn();
         this.cartRepository.save(cartToCreate);
         return ResponseEntity.ok(cartToCreate);
@@ -52,14 +52,14 @@ public class ShoppingCartApi {
     @PostMapping()
     public ResponseEntity<ShoppingCart> createCart(@RequestBody ProductToItemView product) {
         Category category = this.categoryRepository.findByName(product.getCategory().getName());
-        var itemToSave = new Item();
+        Item itemToSave = new Item();
         itemToSave.setTitle(product.getTitle());
         itemToSave.setPrice(product.getPrice());
         itemToSave.setCategory(category);
         itemToSave.setImageUrl(product.getImageUrl());
         itemToSave.addQuantity();
 
-        var cartToCreate = new ShoppingCart();
+        ShoppingCart cartToCreate = new ShoppingCart();
         cartToCreate.setCreatedOn();
         cartToCreate.addItem(itemToSave);
 
@@ -81,7 +81,7 @@ public class ShoppingCartApi {
                     .filter(p -> product.getTitle().equals(p.getTitle()))
                     .findFirst().ifPresentOrElse(Item::addQuantity,
              () -> {
-                var productToAdd = this.productMapper.convertToItemEntityYaPili(product);
+                Item productToAdd = this.productMapper.convertToItemEntityYaPili(product);
                 c.addItem(productToAdd);
             });
             this.cartRepository.save(c);
@@ -107,7 +107,7 @@ public class ShoppingCartApi {
             cart.getItems().stream()
                     .filter(p -> product.getTitle().equals(p.getTitle()))
                     .findFirst().ifPresent(p -> {
-                        var amount = p.getQuantity();
+                        int amount = p.getQuantity();
                         if (amount > 1) {
                             p.reduceQuantity();
                         } else {
@@ -126,14 +126,14 @@ public class ShoppingCartApi {
 
     @DeleteMapping("/{id}")
     public void deleteCart(@PathVariable Long id) {
-        var cart = this.cartRepository.findById(id);
+        Optional<ShoppingCart> cart = this.cartRepository.findById(id);
         cart.ifPresent(c -> this.cartRepository.deleteById(id));
 
     }
 
     @PatchMapping ("/clear/{id}")
     public ResponseEntity<?> clearItems(@PathVariable Long id){
-        var cart = this.cartRepository.findById(id);
+        Optional<ShoppingCart>  cart = this.cartRepository.findById(id);
 
         cart.ifPresent(c -> {
             c.clearItems();

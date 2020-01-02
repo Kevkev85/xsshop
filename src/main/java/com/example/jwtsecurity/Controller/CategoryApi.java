@@ -37,7 +37,7 @@ public class CategoryApi {
             throw new ValidationException();
         }
 
-        var categoryEntity = this.mapper.convertToCategoryEntity(categoryView);
+        Category categoryEntity = this.mapper.convertToCategoryEntity(categoryView);
         this.categoryRepository.save(categoryEntity);
 
         return ResponseEntity.ok(categoryEntity);
@@ -46,7 +46,7 @@ public class CategoryApi {
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{name}")
     public void delete(@PathVariable String name){
-        var category = this.categoryRepository.findByName(name);
+        Category category = this.categoryRepository.findByName(name);
         this.categoryRepository.delete(category);
     }
 }

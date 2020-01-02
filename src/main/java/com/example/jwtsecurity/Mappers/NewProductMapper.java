@@ -1,5 +1,6 @@
 package com.example.jwtsecurity.Mappers;
 
+import com.example.jwtsecurity.Model.Category;
 import com.example.jwtsecurity.Model.Product;
 import com.example.jwtsecurity.Repository.CategoryRepository;
 import com.example.jwtsecurity.Repository.ProductRepository;
@@ -17,7 +18,7 @@ public class NewProductMapper {
     }
 
     ToProductEntity mpya = (ProductView view) -> {
-        var category = this.categoryRepository.findByName(view.getCategory());
+        Category category = this.categoryRepository.findByName(view.getCategory());
         return new Product(view.getTitle(), view.getPrice(), category, view.getImageUrl());
 
     };

@@ -2,6 +2,7 @@ package com.example.jwtsecurity.Controller;
 
 import com.example.jwtsecurity.Mappers.ProductMapper;
 import com.example.jwtsecurity.Model.Order;
+import com.example.jwtsecurity.Model.OrderItem;
 import com.example.jwtsecurity.Repository.OrderRepository;
 import com.example.jwtsecurity.Views.OrderView;
 import org.springframework.http.ResponseEntity;
@@ -34,12 +35,12 @@ public class OrderApi {
             throw new ValidationException();
         }
 
-        var orderToCreate = new Order(view.getName(), view.getAddressLine1(),
+        Order orderToCreate = new Order(view.getName(), view.getAddressLine1(),
                 view.getAddressLine2(), view.getCity(), view.getTotalPrice());
 
         orderToCreate.setDatePlaced();
 
-        var orderedItemList = view.getOrderItems().stream()
+        List<OrderItem> orderedItemList = view.getOrderItems().stream()
                     .map(c -> this.mapper.convertToOrderItemEntity(c))
                     .collect(Collectors.toList());
 

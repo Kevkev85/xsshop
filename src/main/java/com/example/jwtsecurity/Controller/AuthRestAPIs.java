@@ -63,7 +63,7 @@ public class AuthRestAPIs {
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
 
-        var roleToAssign = signUpRequest.getRole();
+        String roleToAssign = signUpRequest.getRole();
 
 
         if(!roleToAssign.isBlank() && roleToAssign.equals("sonko")) {

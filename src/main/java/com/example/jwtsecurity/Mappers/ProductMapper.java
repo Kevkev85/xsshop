@@ -24,7 +24,7 @@ public class ProductMapper {
     }
 
     public Product convertToEntity(ProductView view){
-        var category = this.categoryRepository.findByName(view.getCategory());
+        Category category = this.categoryRepository.findByName(view.getCategory());
 
         return new Product(view.getTitle(), view.getPrice(), category, view.getImageUrl());
 
@@ -32,9 +32,9 @@ public class ProductMapper {
 
 
     public Item convertToItemEntityYaPili(ProductToItemView view){
-        var category = this.categoryRepository.findByName(view.getCategory().getName());
+        Category category = this.categoryRepository.findByName(view.getCategory().getName());
 
-        var entity = new Item(view.getTitle(), view.getPrice(), category, view.getImageUrl());
+        Item entity = new Item(view.getTitle(), view.getPrice(), category, view.getImageUrl());
         entity.setQuantity(1);
         return entity;
     }
@@ -62,7 +62,7 @@ public class ProductMapper {
 
 
     public ProductView convertToProductView(Product entity){
-        var viewModel = new ProductView();
+        ProductView viewModel = new ProductView();
 
         viewModel.setId(entity.getId());
         viewModel.setTitle(entity.getTitle());
