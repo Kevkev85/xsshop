@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f26b4949-f1f2-4de6-bc89-2623c7c4afd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_bytebuddy_byte_buddy_1_9_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_bytebuddy_byte_buddy_agent_1_9_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_tomcat_annotations_api_9_0_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/jwtsecurity.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jwtsecurity.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/jwtsecurity.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/jwtsecurity.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.example.jwtsecurity.JwtsecurityApplicationTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.example.jwtsecurity.JwtsecurityApplicationTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifests/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/manifests/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifests/database.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/manifests/database.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifests/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/manifests/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifests/web.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/manifests/web.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +156,7 @@
       <workItem from="1577906487206" duration="2803000" />
       <workItem from="1577937609565" duration="9438000" />
       <workItem from="1577964904335" duration="151000" />
-      <workItem from="1577991307342" duration="8539000" />
+      <workItem from="1577991307342" duration="12741000" />
     </task>
     <servers />
   </component>

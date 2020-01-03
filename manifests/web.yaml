@@ -1,36 +1,36 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: shop-back
-  namespace: apps
+  name: shop
+  namespace: shop-app
 spec:
   type: ClusterIP
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: shop-back
+    app: shop
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: apps
-  name: shop-back
+  namespace: shop-app
+  name: shop
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shop-back
+      app: shop
   template:
     metadata:
       labels:
-        app: shop-back
+        app: shop
     spec:
       imagePullSecrets:
         - name: regcred
       containers:
         - image: r.k8s.kakuom.com/shop:latest
-          name: shop-back-web
+          name: shop-web
           imagePullPolicy: Always
           readinessProbe:
             httpGet:
@@ -46,6 +46,6 @@ spec:
           env:
           envFrom:
             - configMapRef:
-                name: shop-back
+                name: shop
             - secretRef:
-                name: shop-back-db-auth
+                name: shop-db-auth

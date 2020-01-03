@@ -1,8 +1,8 @@
 apiVersion: kubedb.com/v1alpha1
 kind: Postgres
 metadata:
-  name: shop-back-db
-  namespace: apps
+  name: shop-db
+  namespace: shop-app
 spec:
   version: "11.2"
   storageType: Durable
