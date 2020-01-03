@@ -13,7 +13,7 @@ server:
 
 spring:
   datasource:
-    url: ${DATASOURCE_URL:${db-url:jdbc:postgresql://localhost:5432/hello-spring}}
+    url: ${DATASOURCE_URL:${db-url:jdbc:postgresql://localhost:5432/shopdb}}
     username: ${POSTGRES_USER:${DATASOURCE_USERNAME:${db-user:}}}
     password: ${POSTGRES_PASSWORD:${DATASOURCE_PASSWORD:${db-pass:}}}
   jpa:
@@ -21,6 +21,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL95Dialect
+
         # Make hibernate correctly handle java.sql.SQLFeatureNotSupportedException when attempting to detect
         # The available functions for the selected dialect
         #
@@ -45,6 +46,7 @@ spring:
     #   create: creates the schema, destroying previous data
     #   create-drop: drop the schema when the SessionFactory is closed explicitly, usually when app is stopped
     #   none: do nothing
-    hibernate.ddl-auto: ${ddl-auto:none}
+    hibernate.ddl-auto: ${ddl-auto:update}
     generate-ddl: false
+
 

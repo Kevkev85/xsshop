@@ -7,7 +7,7 @@ services:
     image: shop:1.0.0
     environment:
       DATASOURCE_PASSWORD: ${DB_PASS:-password}
-      DATASOURCE_URL: ${DB_URL:-jdbc:postgresql://postgres:5432/xsshopback}
+      DATASOURCE_URL: ${DB_URL:-jdbc:postgresql://postgres:5432/shopdb}
       DATASOURCE_USERNAME: ${DB_USER:-postgres}
       DDL_AUTO:
       PORT: 8080
@@ -27,7 +27,7 @@ services:
   postgres:
     image: postgres:11.2
     environment:
-      POSTGRES_DB: xsshopback
+      POSTGRES_DB: shopdb
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
     volumes:

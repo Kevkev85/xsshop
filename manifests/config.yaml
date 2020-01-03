@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shop-back
+  namespace: apps
+data:
+  DATASOURCE_URL: "jdbc:postgresql://shop-back-db.apps.svc:5432/shop_back"
+  SPRING_PROFILES_ACTIVE: "production"
